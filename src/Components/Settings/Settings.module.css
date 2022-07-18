@@ -1,0 +1,15 @@
+p {
+    margin: 0;
+}
+
+.settings {
+    width: 200px;
+    height: 200px;
+    border: 2px solid green;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    padding: 12px;
+}

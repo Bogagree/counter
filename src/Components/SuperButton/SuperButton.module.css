@@ -1,0 +1,12 @@
+.btn {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: green;
+    font-weight: bold;
+    color: white;
+}
+
+.btn:disabled {
+    background-color: red;
+}

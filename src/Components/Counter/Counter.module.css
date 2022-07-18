@@ -1,0 +1,24 @@
+
+.counter {
+    height: 250px;
+    position: relative;
+}
+
+
+.counter__container {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 190px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: gold;
+    border-radius: 5px;
+}
+
+.buttons_wrapper {
+    display: flex;
+}
