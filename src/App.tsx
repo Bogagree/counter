@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Counter from "./Components/Counter/Counter";
 import {Settings} from "./Components/Settings/Settings";
+import style from "./Components/Settings/Settings.module.css";
 
 function App() {
 
     const [start, setStart] = useState<number>(0);
     const [max, setMax] = useState<number>(5);
-    let [counter, setCounter] = useState(start)
+    const [counter, setCounter] = useState<number>(start);
+
 
     useEffect(() => {
         let actualCounter = localStorage.getItem('counterValue')
@@ -16,7 +18,14 @@ function App() {
 
     useEffect(() => {
         localStorage.setItem('counterValue', JSON.stringify(counter))
-    }, [counter])
+        localStorage.setItem('start', JSON.stringify(start))
+        localStorage.setItem('max', JSON.stringify(max))
+       // if(start >= max) setError(true)
+        //else setError(false)
+    }, [counter, start, max])
+    // вопрос по массиву
+
+    useEffect( () => {}, [])
 
     const counterIncrease = () => {
         if (counter < max) {
@@ -33,7 +42,7 @@ function App() {
     }
 
     const changeStartValue = (value: number) => {
-        setStart(value)
+        setStart(value);
     }
 
     const updateSettings = () => {
@@ -43,6 +52,9 @@ function App() {
         setCounter(start)
     }
 
+    let startFinalClassName = start < 0 ||  start > max ? style.warning: '' ;
+    let maxFinalClassName = max < 0 ? style.warning : ''
+
 
     return (
         <div className='App'>
@@ -51,7 +63,7 @@ function App() {
                 max={max}
                 start={start}
                 counter={counter}
-                counterReset={counterReset}
+                counterReser={counterReset}
                 counterIncreaser={counterIncrease}
             />
 
@@ -61,8 +73,9 @@ function App() {
                 changeMax={changeMaxValue}
                 changeStart={changeStartValue}
                 updateSettings={updateSettings}
+                startClassName={startFinalClassName}
+                maxClassName={maxFinalClassName}
             />
-
 
         </div>
     );

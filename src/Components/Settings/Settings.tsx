@@ -9,21 +9,19 @@ type SettingsPropsType = {
     changeMax: (newMax: number) => void
     changeStart: (newStart: number) => void
     updateSettings: () => void
+    startClassName: string
+    maxClassName: string
 }
 
 export const Settings: React.FC<SettingsPropsType> = (props) => {
-
-
-    function onChangeMaxHAndler(newMax:number) {
-        props.changeMax(newMax)
-    }
 
     return (
         <div>
             <div className={style.settings}>
 
-                <MySuperInput title='Start' value={props.start} onChangeNumber={props.changeStart} />
-                <MySuperInput title='Max' value={props.max} onChangeNumber={(newMax) => {onChangeMaxHAndler(+newMax)}} />
+                <MySuperInput title='Start' value={props.start} onChangeNumber={props.changeStart} className={props.startClassName} />
+
+                <MySuperInput title='Max' value={props.max} onChangeNumber={ props.changeMax } className={props.maxClassName}/>
 
                 <Button onClick={props.updateSettings} variant="contained">SET settings</Button>
             </div>

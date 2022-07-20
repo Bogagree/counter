@@ -1,6 +1,4 @@
-.superInput {
 
-}
 
 .errorInput {
     border: 3px solid lime;
@@ -63,31 +61,33 @@ mark {
     top: 0;
     padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.4);
     margin: calc(var(--size-bezel) * 0.85 + 3px) calc(var(--size-bezel) * 0.5);
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     transform: translate(0, 0);
     transform-origin: 0 1px;
-    background: var(--color-background);
+    /*background: var(--color-background);*/
+    border-radius: 5px;
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.0;
 }
 
-.input__field {
-    box-sizing: border-box;
-    display: block;
-    width: 200px;
-    border: 3px solid currentColor;
-    padding: calc(var(--size-bezel)) var(--size-bezel);
-    margin: 0.5rem;
-    color: currentColor;
-    background: transparent;
-    border-radius: var(--size-radius);
-}
+/*.input__field {*/
+/*    box-sizing: border-box;*/
+/*    display: block;*/
+/*    !*width: 100px;*!*/
+/*    border: 3px solid currentColor;*/
+/*    padding: calc(var(--size-bezel)) var(--size-bezel);*/
+/*    margin: 0.5rem;*/
+/*    !*color: currentColor;*!*/
+/*    !*background: transparent;*!*/
+/*    !*border-radius: var(--size-radius);*!*/
+/*}*/
 
 .input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
     transform: translate(0.25rem, -65%) scale(0.9);
     color: var(--color-accent);
 }
+
 
 .hidden {
     display: none;

@@ -14,6 +14,7 @@ export const MySuperInput: React.FC<MySuperInputPropsType> = (
     {   title, onChange, onChangeNumber, value, className,
         ...restProps}
 ) => {
+
     const [num, setNum] = useState<number>(value)
 
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +22,12 @@ export const MySuperInput: React.FC<MySuperInputPropsType> = (
         onChangeNumber(+e.currentTarget.value)
     }
 
+    let finalClassName = style.input__label + ' ' + className
+
     return (
         <div>
             <span className={style.input__label}>{title}</span>
-            <input type="number" onChange={onChangeCallback} value={num} className={style.input__field}/>
+            <input type="number" onChange={onChangeCallback} value={num} className={finalClassName}/>
         </div>
     );
 };
